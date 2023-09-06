@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using webapi.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -6,6 +7,7 @@ using webapi.Models;
 namespace webapi.Controllers
 {
 	[Route("api/todotask")]
+	[Authorize]
 	[ApiController]
 	public class TodoTaskController : ControllerBase
 	{

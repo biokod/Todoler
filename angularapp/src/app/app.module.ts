@@ -22,7 +22,7 @@ import { AppComponent } from './app.component';
         {
           clientId: '0d384eaf-57b8-4470-b6c7-567f3f7ac18e',
           redirectUri: 'http://localhost:4200',
-          authority:'https://login.microsoftonline.com/1067bf22-a04c-4fa6-bcb3-e9231d15aa51'
+          authority: 'https://login.microsoftonline.com/biokodgmail.onmicrosoft.com/'
         },
         cache:
         {

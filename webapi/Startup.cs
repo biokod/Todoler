@@ -33,17 +33,19 @@ namespace webapi
 			services.AddEndpointsApiExplorer();
 			services.AddSwaggerGen();
 
-			services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddMicrosoftIdentityWebApi(Configuration, "AzureAd");
+			services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+				.AddMicrosoftIdentityWebApi(Configuration, "AzureAd");
 			services.AddAuthorization();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
-			app.UseCors(options =>
+			/*app.UseCors(options =>
 				options.WithOrigins("http://localhost:4200")
 				.AllowAnyMethod()
-				.AllowAnyHeader());
+				.AllowAnyHeader());*/
+			app.UseCors();
 
 			if (env.IsDevelopment())
 			{
@@ -62,6 +64,7 @@ namespace webapi
 			app.UseEndpoints(endpoints =>
 			{
 				endpoints.MapControllers();
+				endpoints.Map("/", [Authorize] () => "homepage");
 			});
 
 			//app.Map("/", [Authorize] () => "homepage");
