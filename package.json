@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "guid-typescript": "^1.0.9",
+    "material-design-icons": "^3.0.1",
+    "material-icons": "^1.13.10",
+    "materialize-css": "^1.0.0"
+  }
+}
